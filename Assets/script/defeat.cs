@@ -11,12 +11,24 @@ public class defeat : MonoBehaviour
     save_load_data save_Load_Data;
     [SerializeField]
     private score_manager score_Manager;
+    private int Clear_Account()
+    {
+        score_Manager.current_Account=0;
+        score_Manager.number_of_Grapes=0;
+        score_Manager.number_of_Kiwis=0;
+        score_Manager.number_of_Tangerines=0;
+        return 0;
+    }
     private void Awake() 
     {
         reset_Button=transform.parent.GetChild(1).GetChild(2).gameObject;
         reset_Button.SetActive(false);
-        score_Manager.current_Account=0;
+        
         Time.timeScale=1;
+    }
+    private void Start()
+    {
+        Clear_Account();
     }
     public void Clic_Reset()
     {

@@ -11,6 +11,7 @@ public class platform : MonoBehaviour
     private static score score;
     private bool active_Platform=false;
     private int random_Position;
+    public byte id;
     private void Awake() 
     {
         controller = Camera.main.GetComponent<platform_controler>();
@@ -71,6 +72,7 @@ public class platform : MonoBehaviour
             Instantiate(prefab_Platform[Instantiate_Platform_Random()],new Vector3(spawn_Point[random_Position],gameObject.transform.position.y+2,0),Quaternion.identity);
             controller.platforms.Add(this.gameObject);
             score.Add_Score();
+            score.Adding_Fruit(id);
             active_Platform=true;
         }
     }

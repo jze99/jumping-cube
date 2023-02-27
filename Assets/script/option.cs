@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class option : MonoBehaviour
 {
+    
     [SerializeField]
     private GameObject menu_Optoin;
     public void Restart()

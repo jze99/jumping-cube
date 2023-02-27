@@ -8,5 +8,7 @@ public class score_manager : ScriptableObject
    public int record_Score;
    public int current_Account;
    public int maney;
-   
+   public int number_of_Tangerines;
+   public int number_of_Grapes;
+   public int number_of_Kiwis;
 }

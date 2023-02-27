@@ -15,6 +15,23 @@ public class score : MonoBehaviour
     {
         save_Load_Data.Load();
     }
+    public int Adding_Fruit(byte _id)
+    {
+        switch (_id)
+        {
+            case 1:
+                return score_Manager.number_of_Tangerines++;
+            
+            case 2:
+                return score_Manager.number_of_Grapes++;
+            
+            case 3:
+                return score_Manager.number_of_Kiwis++;
+            default:
+                return 0;
+            
+        }
+    }
     public int Add_Score()
     {
       return score_Manager.current_Account++;
