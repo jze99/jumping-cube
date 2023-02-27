@@ -7,4 +7,6 @@ public class score_manager : ScriptableObject
 {
    public int record_Score;
    public int current_Account;
+   public int maney;
+   
 }

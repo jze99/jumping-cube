@@ -8,6 +8,8 @@ public class defeat : MonoBehaviour
     [SerializeField]
     private GameObject reset_Button;
     [SerializeField]
+    save_load_data save_Load_Data;
+    [SerializeField]
     private score_manager score_Manager;
     private void Awake() 
     {

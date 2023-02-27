@@ -23,18 +23,19 @@ public class moving_button : MonoBehaviour
     {
         clic_Right=false;
     }
-    private void moving_Player()
+    private Transform moving_Player()
     {
         if(clic_Left)
         {
-            gameObject.transform.position-=new Vector3(movement_Speed*Time.deltaTime,0,0);
+           gameObject.transform.position-=new Vector3(movement_Speed*Time.deltaTime,0,0);
         }
         if(clic_Right)
         {
-            gameObject.transform.position+=new Vector3(movement_Speed*Time.deltaTime,0,0);
+           gameObject.transform.position+=new Vector3(movement_Speed*Time.deltaTime,0,0);
         }
+        return null;
     }
-    private void Border(Vector3 positio_Player)
+    private Transform Border(Vector3 positio_Player)
     {
         if(positio_Player.x<-4)
         {
@@ -44,6 +45,7 @@ public class moving_button : MonoBehaviour
         {
             gameObject.transform.position=new Vector3(-4f,positio_Player.y,0);
         }
+        return null;
     }
     private void Update() 
     {

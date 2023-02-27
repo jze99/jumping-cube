@@ -6,11 +6,6 @@ public class option : MonoBehaviour
 {
     [SerializeField]
     private GameObject menu_Optoin;
-    
-    private void Start() 
-    {
-        
-    }
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -26,9 +21,13 @@ public class option : MonoBehaviour
         menu_Optoin.SetActive(false);
         Time.timeScale=1;
     }
-    public void Exit()
+    public void Exit_Play()
     {
         SceneManager.LoadScene(0);
+    }
+    public void Exit()
+    {
+        Application.Quit();
     }
     public void Play()
     {

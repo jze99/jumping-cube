@@ -1,32 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Music : MonoBehaviour
+public class music : MonoBehaviour
 {
     public List<AudioClip> musucs = new List<AudioClip>();
     private AudioSource sourse;
-    private float time_clip; 
+    public Slider voluem_Music;
+    public Slider voluem_Cub; 
+    private Transform cude;
     IEnumerator playAudio()
-{
-        sourse.clip = musucs[0];
+    {
+        sourse.clip = musucs[Random.Range(0,musucs.Count)];
         sourse.Play();
         yield return new WaitForSeconds(sourse.clip.length);
-        Debug.Log(playAudio());
-        Music_Completion();
-}
-    private void Start() 
+        Audio_Play();
+    }
+    private void Awake() 
     {
         sourse = gameObject.GetComponent<AudioSource>();
         StartCoroutine(playAudio());
     }
-    private void Music_Completion()
-    {
-        StartCoroutine(playAudio());
-    }
     public void Audio_Play()
     {
-        
+        StartCoroutine(playAudio());
     }
     public void Audio_Stop()
     {
@@ -34,6 +32,6 @@ public class Music : MonoBehaviour
     }
     private void Update() 
     {
-        
+        sourse.volume = voluem_Music.value;
     }
 }

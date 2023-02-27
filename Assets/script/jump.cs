@@ -9,19 +9,10 @@ public class jump : MonoBehaviour
     [SerializeField]
     private static score_manager Score_Manager;
     public int jump_Power;
-    private void Save_Game()
-    {
-        PlayerPrefs.SetInt("record",Score_Manager.record_Score);
-    }
-    private void Load_Game()
-    {
-        PlayerPrefs.GetInt("record");
-    }
     private void Awake() 
     {
         rb_Player=gameObject.GetComponent<Rigidbody>();
         stoper = gameObject.GetComponent<moving_button>();
-
     }
     private void OnCollisionEnter(Collision other) 
     {

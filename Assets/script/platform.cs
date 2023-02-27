@@ -17,41 +17,42 @@ public class platform : MonoBehaviour
         score=GameObject.Find("Canvas").GetComponent<score>();
         transform.name="platform";
     }
-    private void Random_Platform_position()
+    private int Random_Platform_position()
     {
         random_Position = Random.Range(0,4);
         if(transform.position.x==-3.5f&&random_Position==0)
         {
-                random_Position++;
+               return random_Position++;
         } 
         else if(transform.position.x==-1.5f&&random_Position==1)
         {
             int ran = Random.Range(0,1);
             if(ran==1)
-                random_Position++;
+               return random_Position++;
             else if(ran==0)
-                random_Position--;
+               return random_Position--;
         }
         else if(transform.position.x==0&&random_Position==2)
         {
             int ran = Random.Range(0,1);
             if(ran==1)
-                random_Position++;
+               return random_Position++;
             else if(ran==0)
-                random_Position--;
+               return random_Position--;
         }
         else if(transform.position.x==1.5f&&random_Position==3)
         {
             int ran = Random.Range(0,1);
             if(ran==1)
-                random_Position++;
+               return random_Position++;
             else if(ran==0)
-                random_Position--;
+               return random_Position--;
         }
         else if(transform.position.x==3.5f&&random_Position==4)
         {
-                random_Position--;
+               return random_Position--;
         }
+        return 0;
     }
     private int Instantiate_Platform_Random()
     {
