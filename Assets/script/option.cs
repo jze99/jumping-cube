@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class option : MonoBehaviour
 {
     
     [SerializeField]
     private GameObject menu_Optoin;
+    [SerializeField]
+    private save_load_data save_Load_Data;
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

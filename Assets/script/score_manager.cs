@@ -11,4 +11,6 @@ public class score_manager : ScriptableObject
    public int number_of_Tangerines;
    public int number_of_Grapes;
    public int number_of_Kiwis;
+   public float valium_Music;
+   public float valium_Cub;
 }

@@ -6,8 +6,7 @@ public class score : MonoBehaviour
 {
     public TextMeshProUGUI score_Text;
     public TextMeshProUGUI record_Score_Text;
-    [SerializeField]
-    private score_manager score_Manager;
+    public score_manager score_Manager;
     [SerializeField]
     private save_load_data save_Load_Data;
     private bool is_Paused;
