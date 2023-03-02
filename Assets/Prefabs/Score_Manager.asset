@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 392137f8d23c44343a300c2cb3a8b500, type: 3}
   m_Name: Score_Manager
   m_EditorClassIdentifier: 
-  record_Score: 31
-  current_Account: 1
+  record_Score: 0
+  current_Account: 0
   maney: 0
   number_of_Tangerines: 0
   number_of_Grapes: 0
   number_of_Kiwis: 0
-  valium_Music: 0.73860985
+  valium_Music: 1
   valium_Cub: 1

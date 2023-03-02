@@ -10,6 +10,8 @@ public class option : MonoBehaviour
     private GameObject menu_Optoin;
     [SerializeField]
     private save_load_data save_Load_Data;
+    [SerializeField]
+    private Canvas loding;
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -35,6 +37,7 @@ public class option : MonoBehaviour
     }
     public void Play()
     {
+        loding.gameObject.SetActive(true);
         SceneManager.LoadScene(1);
     }
 }

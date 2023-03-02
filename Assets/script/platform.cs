@@ -12,7 +12,7 @@ public class platform : MonoBehaviour
     private bool active_Platform=false;
     private int random_Position;
     public byte id;
-    private void Awake() 
+    private void Start() 
     {
         controller = Camera.main.GetComponent<platform_controler>();
         score=GameObject.Find("Canvas").GetComponent<score>();

@@ -14,8 +14,12 @@ public class jump : MonoBehaviour
     private music music;
     private void Awake() 
     {
+        
+    }
+    private void Start() 
+    {
         rb_Player=gameObject.GetComponent<Rigidbody>();
-        stoper = gameObject.GetComponent<moving_button>();
+        stoper = gameObject.GetComponent<moving_button>();    
     }
     private void OnCollisionEnter(Collision other) 
     {

@@ -24,10 +24,14 @@ public class music : MonoBehaviour
     }
     private void Awake() 
     {
+             
+    }
+    private void Start() 
+    {
         sourse = gameObject.GetComponent<AudioSource>();
         StartCoroutine(playAudio());
         volium_Music.value=PlayerPrefs.GetFloat("save music");
-        volium_Cub.value=PlayerPrefs.GetFloat("save cub");     
+        volium_Cub.value=PlayerPrefs.GetFloat("save cub");
     }
     public void Audio_Play()
     {

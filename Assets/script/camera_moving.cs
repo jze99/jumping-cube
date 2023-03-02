@@ -12,7 +12,11 @@ public class camera_moving : MonoBehaviour
     }
     private void Awake() 
     {
-        camera_Player=Camera.main;
+        
+    }
+    private void Start() 
+    {
+        camera_Player=Camera.main;    
     }
     private void FixedUpdate() 
     {
