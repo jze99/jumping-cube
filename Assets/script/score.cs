@@ -10,9 +10,9 @@ public class score : MonoBehaviour
     [SerializeField]
     private save_load_data save_Load_Data;
     private bool is_Paused;
-    private void Awake() 
+    private void Start() 
     {
-        save_Load_Data.Load();
+         save_Load_Data.Load();
     }
     public int Adding_Fruit(byte _id)
     {

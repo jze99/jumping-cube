@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class camera_moving : MonoBehaviour
@@ -9,10 +7,6 @@ public class camera_moving : MonoBehaviour
     {
         if(gameObject.transform.position.y>camera_Player.transform.position.y)
             camera_Player.transform.position=new Vector3(0,transform.position.y,-10);
-    }
-    private void Awake() 
-    {
-        
     }
     private void Start() 
     {

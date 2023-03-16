@@ -220,4 +220,5 @@ MonoBehaviour:
   - {fileID: 1019778946179928105, guid: f00f74aab28b598479dc7104a93296b6, type: 3}
   - {fileID: 6880087015148647692}
   - {fileID: 8554674926165679230, guid: 334b6f2469755a4459c5ddf3ecb0c00c, type: 3}
+  player: {fileID: 0}
   id: 2

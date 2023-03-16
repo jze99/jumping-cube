@@ -12,6 +12,13 @@ public class option : MonoBehaviour
     private save_load_data save_Load_Data;
     [SerializeField]
     private Canvas loding;
+    private void Start() 
+    {
+        if(menu_Optoin!=null)
+        {
+            menu_Optoin.SetActive(false);
+        }    
+    }
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -25,7 +32,7 @@ public class option : MonoBehaviour
     public void Close_Options()
     {
         menu_Optoin.SetActive(false);
-        Time.timeScale=1;
+        StartCoroutine(LoadYourAsyncScene());
     }
     public void Exit_Play()
     {
@@ -39,5 +46,13 @@ public class option : MonoBehaviour
     {
         loding.gameObject.SetActive(true);
         SceneManager.LoadScene(1);
+    }
+     IEnumerator LoadYourAsyncScene()
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(1);
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
     }
 }

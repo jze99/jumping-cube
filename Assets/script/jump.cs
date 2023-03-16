@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class jump : MonoBehaviour
@@ -12,15 +10,12 @@ public class jump : MonoBehaviour
     public int jump_Power;
     [SerializeField]
     private music music;
-    private void Awake() 
-    {
-        
-    }
     private void Start() 
     {
         rb_Player=gameObject.GetComponent<Rigidbody>();
         stoper = gameObject.GetComponent<moving_button>();    
     }
+    
     private void OnCollisionEnter(Collision other) 
     {
         if(other.collider.tag=="platform")

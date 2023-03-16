@@ -7,6 +7,8 @@ public class platform : MonoBehaviour
     private float[] spawn_Point={-3.5f,-1.5f,0,1.5f,3.5f};
     [SerializeField]
     private GameObject[] prefab_Platform;
+    [SerializeField]
+    private GameObject player;
     private static platform_controler controller;
     private static score score;
     private bool active_Platform=false;
@@ -17,6 +19,7 @@ public class platform : MonoBehaviour
         controller = Camera.main.GetComponent<platform_controler>();
         score=GameObject.Find("Canvas").GetComponent<score>();
         transform.name="platform";
+        player = GameObject.FindGameObjectWithTag("Player");
     }
     private int Random_Platform_position()
     {
@@ -63,9 +66,8 @@ public class platform : MonoBehaviour
             return Random.Range(0,prefab_Platform.Length);
             
     }
-    
     private void OnCollisionEnter(Collision other)
-     {
+    {
         if(other.collider.tag=="Player"&&active_Platform==false)
         {
             Random_Platform_position();
@@ -74,6 +76,17 @@ public class platform : MonoBehaviour
             score.Add_Score();
             score.Adding_Fruit(id);
             active_Platform=true;
+        }
+    }
+    private void FixedUpdate() 
+    {
+        if(player.transform.position.y-0.2f<=transform.position.y)
+        {
+            gameObject.GetComponent<Collider>().isTrigger=true;
+        }
+        else
+        {
+            gameObject.GetComponent<Collider>().isTrigger=false;
         }
     }
 }

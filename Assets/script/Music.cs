@@ -6,10 +6,11 @@ using UnityEngine.UI;
 public class music : MonoBehaviour
 {
     public List<AudioClip> musucs = new List<AudioClip>();
-    private AudioSource sourse;
+    public AudioSource source;
+    private GameObject sourece_Cub;
     public Slider volium_Music;
     public Slider volium_Cub; 
-    public GameObject sound;
+
     [SerializeField]
     private GameObject cube_Jump;
     private Transform cude;
@@ -17,18 +18,14 @@ public class music : MonoBehaviour
     private save_load_data save_Load_Data;
     IEnumerator playAudio()
     {
-        sourse.clip = musucs[Random.Range(0,musucs.Count)];
-        sourse.Play();
-        yield return new WaitForSeconds(sourse.clip.length);
+        source.clip = musucs[Random.Range(0,musucs.Count)];
+        source.Play();
+        yield return new WaitForSeconds(source.clip.length);
         Audio_Play();
-    }
-    private void Awake() 
-    {
-             
     }
     private void Start() 
     {
-        sourse = gameObject.GetComponent<AudioSource>();
+        source = gameObject.GetComponent<AudioSource>();
         StartCoroutine(playAudio());
         volium_Music.value=PlayerPrefs.GetFloat("save music");
         volium_Cub.value=PlayerPrefs.GetFloat("save cub");
@@ -39,11 +36,11 @@ public class music : MonoBehaviour
     }
     public void Audio_Stop()
     {
-        sourse.Stop();
+        source.Stop();
     }
     public void Save_Sound_Music()
     {
-        sourse.volume = volium_Music.value;
+        source.volume = volium_Music.value;
         save_Load_Data.Save_Valium_Music(volium_Music.value);
     }
     public void Save_Sound_Cub()
@@ -52,8 +49,8 @@ public class music : MonoBehaviour
     }
     public void cube_Jumping()
     {
-        Destroy(sound);
-        sound = Instantiate(cube_Jump,transform.position,Quaternion.identity);
-        sound.GetComponent<AudioSource>().volume=volium_Cub.value;
+        Destroy(sourece_Cub);
+        sourece_Cub = Instantiate(cube_Jump,transform.position,Quaternion.identity);
+        sourece_Cub.GetComponent<AudioSource>().volume=volium_Cub.value;
     }
 }
